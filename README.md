@@ -19,14 +19,13 @@ init git commitlint env
    npm install -g standard-version
    ```
 
-4. 把所有文件复制去目标文件夹，包括：`.husky/`，`commitlint.config.js`，`package.json`
+4. 把所有文件复制至目标文件夹，包括：`.husky/`，`commitlint.config.js`，`package.json`
 
 5. 初始化 node modules 环境
 
    ```shell
    npm install  # 安装所有依赖包
-   npm run prepare  # 开启husky
-   echo '# package.json\npackage-lock.json\nnode_modules/\n# commitlint.config.js' >> .gitignore
+   # npm run prepare  # 开启husky
+   echo '## npm\n# package.json\npackage-lock.json\nnode_modules/\n# commitlint.config.js' >> .gitignore
    ```
-
 
