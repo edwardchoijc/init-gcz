@@ -1,3 +1,8 @@
+### Custom ###
+package-lock.json
+# package.json
+# commitlint.config.js
+
 ### macOS ###
 # General
 .DS_Store
@@ -5,8 +10,3 @@
 ### Node ###
 # Dependency directories
 node_modules/
-
-### Custom ###
-# package.json
-package-lock.json
-# commitlint.config.js
