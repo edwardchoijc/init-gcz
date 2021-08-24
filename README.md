@@ -26,6 +26,6 @@ init git commitlint env
    ```shell
    npm install  # 安装所有依赖包
    # npm run prepare  # 开启husky
-   echo '## npm\n# package.json\npackage-lock.json\nnode_modules/\n# commitlint.config.js' >> .gitignore
+   cat {init-gcz_path}/.gitignore >> .gitignore
    ```
 
