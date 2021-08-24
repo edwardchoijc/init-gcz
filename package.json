@@ -1,0 +1,34 @@
+{
+  "name": "init-gcz",
+  "version": "1.0.0",
+  "description": "init git commitlint env based on Conventional Commits specification.",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardchoijc/init-gcz.git"
+  },
+  "keywords": [
+    "commitlint"
+  ],
+  "author": "EdwardChoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwardchoijc/init-gcz/issues"
+  },
+  "homepage": "https://github.com/edwardchoijc/init-gcz#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^6.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
