@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/edwardchoijc/init-gcz#readme",
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
+    "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^12.1.4",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^6.0.0"
