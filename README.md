@@ -1,31 +1,38 @@
 # init-gcz
-init git commitlint env
 
+init git commitlint env — 基于 Conventional Commits 规范的 commit message 校验与发版环境。
 
+包含：
 
-## 初始化流程
+- **commitlint** + **husky** —— 提交时通过 `commit-msg` 钩子校验 commit message 是否符合规范。
+- **commitizen** —— 交互式引导书写规范的 commit message（可选，`npx cz`）。
+- **commit-and-tag-version** —— 本地手动发版：自动升版本号、生成 CHANGELOG、打 git tag。
 
-1. 安装 **nodejs** + **npm**
+## 一键配置
 
-2. 安装 commit message 的标准化工具 —— **commitizen**
+在需要配置的 git 项目根目录下执行：
 
-   ```shell
-   npm install -g commitizen
-   ```
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/edwardchoijc/init-gcz/HEAD/install.sh)"
+```
 
-3. 安装 git tag 标准化工具 —— **standard-version**
+脚本会临时 clone 本仓库，把 `package.json`、`commitlint.config.js`、`.husky/` 复制到当前项目，合并 `.gitignore` 条目，安装依赖并启用 husky 钩子，最后自动清理临时目录。
 
-   ```shell
-   npm install -g standard-version
-   ```
+## 日常使用
 
-4. 把所有文件复制至目标文件夹，包括：`.husky/`，`commitlint.config.js`，`package.json`
+- 正常 `git commit`，不符合 Conventional Commits 规范的 message 会被 `commit-msg` 钩子拦下。
+- 也可用 `npx cz` 交互式书写规范的 commit message。
 
-5. 初始化 node modules 环境
+## 发版
 
-   ```shell
-   npm install  # 安装所有依赖包
-   # npm run prepare  # 开启husky
-   cat {init-gcz_path}/.gitignore >> .gitignore
-   ```
+积累若干 `feat:` / `fix:` 等规范提交后，需要发版时执行：
 
+```shell
+npm run release
+```
+
+它会根据 commit 类型自动升版本号、生成/追加 `CHANGELOG.md` 并打好 git tag，随后推送：
+
+```shell
+git push --follow-tags
+```
