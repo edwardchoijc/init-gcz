@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "husky",
+        "commit": "cz",
         "release": "commit-and-tag-version"
     },
     "repository": {

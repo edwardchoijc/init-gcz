@@ -97,4 +97,5 @@ info "enabling husky hooks (npm run prepare)"
 ( cd "$TARGET_DIR" && npm run prepare )
 
 info "done — commitlint + husky are ready in $TARGET_DIR"
+info "run 'npm run commit' to write a commit message interactively (commitizen)"
 info "run 'npm run release' to cut a release (bump version, update CHANGELOG, tag)"

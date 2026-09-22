@@ -5,7 +5,7 @@ init git commitlint env — 基于 Conventional Commits 规范的 commit message
 包含：
 
 - **commitlint** + **husky** —— 提交时通过 `commit-msg` 钩子校验 commit message 是否符合规范。
-- **commitizen** —— 交互式引导书写规范的 commit message（可选，`npx cz`）。
+- **commitizen** —— 交互式引导书写规范的 commit message（可选，`npm run commit`）。
 - **commit-and-tag-version** —— 本地手动发版：自动升版本号、生成 CHANGELOG、打 git tag。
 
 ## 一键配置
@@ -21,7 +21,7 @@ init git commitlint env — 基于 Conventional Commits 规范的 commit message
 ## 日常使用
 
 - 正常 `git commit`，不符合 Conventional Commits 规范的 message 会被 `commit-msg` 钩子拦下。
-- 也可用 `npx cz` 交互式书写规范的 commit message。
+- 也可用 `npm run commit` 交互式书写规范的 commit message。
 
 ## 发版
 
