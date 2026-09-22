@@ -73,7 +73,8 @@ merge_gitignore() {
 for cmd in git npm; do
   have "$cmd" || die "$cmd is required but not installed."
 done
-[ -d "$TARGET_DIR/.git" ] || die "current directory is not a git repository; run 'git init' in your project root first."
+git -C "$TARGET_DIR" rev-parse --is-inside-work-tree >/dev/null 2>&1 \
+  || die "current directory is not a git repository; run 'git init' in your project root first."
 
 # Clone the source repo into the temp directory.
 info "fetching init-gcz"
